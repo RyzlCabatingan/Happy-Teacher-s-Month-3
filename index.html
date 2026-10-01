@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher's Month Invitation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="hearts">
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+    </div>
+
+    <div class="greeting" id="greeting">
+        <h2>For a Special Teacher 💗</h2>
+        <p>A little surprise just for you!</p>
+    </div>
+
+    <div class="envelope-container" id="envelope">
+        <div class="envelope">
+            <div class="envelope-flap"></div>
+            <div class="envelope-body"></div>
+            <div class="heart-seal">♥</div>
+        </div>
+
+        <button id="openButton">Open the Envelope💌</button>
+    </div>
+
+    <div class="letter-container" id="letterContainer">
+        <div class="letter">
+            <h1>Happy Teacher's Month!</h1>
+
+            <img src="flower.png" alt="Flowers for my teacher" class="flowers">
+
+            <p>Dear Ma'am,</p>
+
+            <p>
+                Thank you for your patience, kindness, and dedication.
+                Thank you for everything you have done for us and for
+                allowing us to pass every activity, even after class
+                hours, hehe. We appreciate all the effort you put into
+                teaching our section. I am also very thankful that you
+                are our professor for this subject.
+            </p>
+
+            <p>
+                I hope you had a wonderful Teacher's Month. Even though
+                there are circumstances that make me feel as though
+                I haven't been good enough for you, I still want to
+                thank you for being the teacher I wanted to have this
+                semester. I hope you have a great day!
+            </p>
+
+            <p class="closing">
+                With love and appreciation,
+            </p>
+
+            <p class="signature">
+                Your Student 💗
+            </p>
+        </div>
+    </div>
+
+    <audio id="backgroundMusic" src="song.mp3" loop></audio>
+
+    <script>
+        const openButton = document.getElementById("openButton");
+        const greeting = document.getElementById("greeting");
+        const envelope = document.getElementById("envelope");
+        const letterContainer = document.getElementById("letterContainer");
+        const backgroundMusic = document.getElementById("backgroundMusic");
+
+        openButton.addEventListener("click", function () {
+            greeting.classList.add("disappear");
+            envelope.classList.add("disappear");
+
+            backgroundMusic.volume = 0.5;
+            backgroundMusic.play().catch(function () {
+                console.log("Music could not be played.");
+            });
+
+            setTimeout(function () {
+                greeting.style.display = "none";
+                envelope.style.display = "none";
+                letterContainer.classList.add("show");
+            }, 600);
+        });
+    </script>
+
+</body>
+</html>
